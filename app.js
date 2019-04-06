@@ -14,8 +14,6 @@ const cors         = require('cors');
 
 require('./configs/passport');
 
-// IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
-
 mongoose
   .connect(process.env.MONGO_LAB, {useNewUrlParser: true})
   .then(x => {
@@ -66,10 +64,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 // ADD CORS SETTINGS HERE TO ALLOW CROSS-ORIGIN INTERACTION:
 
-// app.options('*', cors())
-// app.use(
-//   cors()
-// );
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
